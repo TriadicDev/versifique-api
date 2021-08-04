@@ -4,6 +4,13 @@ import {Entity, model, property} from '@loopback/repository';
 export class Profile extends Entity {
   @property({
     type: 'string',
+    id: true,
+    mongodb: {dataType: 'ObjectId'}
+  })
+  id: string;
+
+  @property({
+    type: 'string',
     required: true,
   })
   name: string;
